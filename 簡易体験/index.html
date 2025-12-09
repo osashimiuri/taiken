@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>防災行動マップ（体験版）</title>
+  
+  <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <header id="app-header">
+      <div class="header-left">
+        <span class="dummy-back-btn">←</span>
+      </div>
+      <div class="header-center">
+        <h1>作品鑑賞</h1>
+      </div>
+      <div class="header-right"></div>
+    </header>
+
+    <div id="map-section">
+      <div id="viewDiv"></div>
+      
+      <button id="basemap-toggle-btn" class="map-type-btn">
+        <div class="icon-layer"></div>
+      </button>
+    </div>
+
+    <div id="art-section">
+      <p class="scroll-hint">← 横にスクロールして作品を選択 →</p>
+      
+      <div id="card-carousel">
+        <div class="empty-message">
+          <p>データを読み込んでいます...</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="detail-modal" class="detail-overlay" style="display:none;">
+    
+    <div class="detail-header-bar">
+      <div class="detail-header-title">作品詳細</div>
+      <button id="detail-close-btn" class="close-flat-btn">×</button>
+    </div>
+
+    <div class="detail-fixed-image-area">
+      <img id="detail-img" src="" alt="作品画像">
+      <div id="zoom-hint" class="zoom-hint">👆 タップで拡大・移動</div>
+    </div>
+    
+    <div class="detail-scrollable-content">
+      <div class="detail-text-area">
+        <h2 id="detail-author">作者名</h2>
+        <hr class="detail-divider">
+
+        <div class="detail-section">
+          <h3>⚠️ 災害リスク (Mabling)</h3>
+          <p id="detail-risk">ここにリスクが入ります</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>🏃‍♀️ 防災行動 (Collage)</h3>
+          <p id="detail-action">ここに行動が入ります</p>
+        </div>
+
+        <div class="detail-section">
+          <h3>💬 作者メッセージ</h3>
+          <p id="detail-message">ここにメッセージが入ります</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://js.arcgis.com/4.29/"></script>
+  <script src="script.js"></script>
+</body>
+</html>
